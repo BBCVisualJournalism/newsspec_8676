@@ -92,14 +92,15 @@
                     legend: {
                         position:         'bottom',
                         labeledValueText: 'both'
-                    }
+                    },
+                    series: {}
                 };
                 
-                // for (var i = 1; i < dataTable.getNumberOfColumns(); i++) {
-                //     options.series[i - 1] = {
-                //         labelInLegend: dataTable.getColumnLabel(i) + ': ' + dataTable.getFormattedValue(dataTable.getNumberOfRows() - 1, i)
-                //     };
-                // }
+                for (var i = 1; i < dataTable.getNumberOfColumns(); i++) {
+                    options.series[i - 1] = {
+                        labelInLegend: dataTable.getColumnLabel(i) + ': ' + dataTable.getFormattedValue(dataTable.getNumberOfRows() - 1, i)
+                    };
+                }
                 
                 // Instantiate and draw our chart, passing in some options.
                 var chart = new google.visualization.LineChart(document.body);
