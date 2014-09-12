@@ -27,6 +27,10 @@
         return value;
     }
 
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     function convertDataSetEmptyStringsToZero (data) {
         for (var i = 0, len = data.length; i < len; i++) {
             data[i][1] = makeNullIfEmptyString(data[i][1]);
@@ -232,21 +236,24 @@
                         gridlines: {
                             color: '#efefef',
                             count: 8
-                        }
+                        },
+                        textStyle:{fontSize:'14'}
                     },
                     vAxis: {
-                        maxValue: 400
+                        maxValue: 400,
+                        textStyle:{fontSize:'14'}
                     },
                     legend: {
                         position:         'bottom',
-                        labeledValueText: 'both'
+                        labeledValueText: 'both',
+                        textStyle:{fontSize:'15'}
                     },
                     series: {}
                 };
                 
                 for (var i = 1; i < dataTable.getNumberOfColumns(); i++) {
                     options.series[i - 1] = {
-                        labelInLegend: dataTable.getColumnLabel(i) + ': ' + dataTable.getFormattedValue(dataTable.getNumberOfRows() - 1, i)
+                        labelInLegend: dataTable.getColumnLabel(i) + ': ' + numberWithCommas(dataTable.getFormattedValue(dataTable.getNumberOfRows() - 1, i))
                     };
                 }
                 
