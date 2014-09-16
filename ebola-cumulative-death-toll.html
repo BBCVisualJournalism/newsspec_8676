@@ -11,6 +11,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript" src="js/csv.js"></script>
+
 <script>
 
     $.ajax({
@@ -96,9 +97,11 @@
                         textStyle:{fontSize:'14'}
                     },
                     legend: {
-                        position:         'bottom',
+                        position:         'top',
                         labeledValueText: 'both',
-                        textStyle:{fontSize:'15'}
+                        textStyle:{fontSize:'17'},
+                        maxLines: 2
+
                     },
                     series: {}
                 };
