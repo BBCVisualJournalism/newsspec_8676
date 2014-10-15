@@ -39,6 +39,7 @@
             data[i][3] = makeNullIfEmptyString(data[i][3]);
             data[i][4] = makeNullIfEmptyString(data[i][4]);
             data[i][5] = makeNullIfEmptyString(data[i][5]);
+            data[i][6] = makeNullIfEmptyString(data[i][6]);
         }
         return data;
     }
@@ -59,6 +60,7 @@
                 dataTable.addColumn('number', 'Liberia');
                 dataTable.addColumn('number', 'Nigeria');
                 dataTable.addColumn('number', 'Sierra Leone');
+                dataTable.addColumn('number', 'USA');
                 dataTable.addColumn('number', 'Total');
                 data.shift();
                 dataTable.addRows(data);
@@ -71,7 +73,7 @@
                         var dateComponents = stringDate.split('/');
                         return new Date(parseInt(dateComponents[2]), (parseInt(dateComponents[1]) - 1), parseInt(dateComponents[0]));
                     }
-                }, 1, 2, 3, 4, 5]);
+                }, 1, 2, 3, 4, 5, 6]);
 
                 // Set chart options
                 var options = {
